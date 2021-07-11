@@ -1,0 +1,21 @@
+name: "Bertrand Tavin"
+output_dir: "."
+navbar:
+  title: "Bertrand Tavin"
+  left:
+    - text: "Research"
+      href: research.html
+    - text: "Conferences"
+      href: conferences.html
+    - text: "Teaching"
+      href: teaching.html
+  right:
+    - icon: fa-github fa-lg
+      href: http://github.com/btavin
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/btavin/
+output:
+  html_document:
+    theme: simplex
+    css: 'styles.css'
+description: "Website of Bertrand Tavin, PhD, Associate professor of finance, Financial markets expert, Consulting in trading strategies, derivatives, risk management."
