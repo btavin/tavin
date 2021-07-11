@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>research.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/simplex.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 41px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h2 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h3 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h4 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h5 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.section h6 {
+  padding-top: 46px;
+  margin-top: -46px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Bertrand Tavin</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="conferences.html">Conferences</a>
+</li>
+<li>
+  <a href="teaching.html">Teaching</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="http://github.com/btavin">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/btavin/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<head>
+<title>
+Research
+</title>
+<meta name="Publications and Research projects of Bertrand Tavin"/>
+</head>
+<p><br/></p>
+<div id="working-papers" class="section level3">
+<h3>Working papers</h3>
+<p><br/></p>
+<ul>
+<li><p>Distribution shifts in predictive panels (with G. COQUERET) <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3853793" target="_blank">[SSRN]</a> - <a href="http://www.gcoqueret.com/files/misc/panel.html" target="_blank">[Sample notebook]</a></p></li>
+<li><p>Seasonal Volatility in Agricultural Markets: Modelling and Empirical Investigations, Last version (with L. SCHNEIDER) <a href="http://dx.doi.org/10.2139/ssrn.2620584" target="_blank">[SSRN]</a></p></li>
+<li><p>Hedging dependence risk with spread options via the Power France and Power Student T copulas <a href="http://dx.doi.org/10.2139/ssrn.2192430" target="_blank">[SSRN]</a></p></li>
+</ul>
+<hr />
+</div>
+<div id="accepted-papers" class="section level3">
+<h3>Accepted papers</h3>
+<p><br/></p>
+<ul>
+<li><p>A note on implied correlation for bivariate contracts. <br/> <strong>Economics Bulletin</strong>, 2020, Vol. 40, Issue 2, pp. 1388-1396. <a href="http://www.accessecon.com/Pubs/EB/2020/Volume40/EB-20-V40-I2-P119.pdf" class="uri">http://www.accessecon.com/Pubs/EB/2020/Volume40/EB-20-V40-I2-P119.pdf</a> (with G. COQUERET)</p></li>
+<li><p>Procedural Rationality, Asset Heterogeneity and Market Selection. <br/> <strong>Journal of Mathematical Economics</strong>, 2019, Vol. 82, pp. 125-149. <a href="https://doi.org/10.1016/j.jmateco.2019.02.001" class="uri">https://doi.org/10.1016/j.jmateco.2019.02.001</a> (with G. COQUERET)</p></li>
+<li><p>Measuring Exposure to Dependence Risk with Random Bernstein Copula Scenarios. <br/> <strong>European Journal of Operational Research</strong>, 2018, Vol. 270, Issue 1, pp. 873-888. <a href="https://doi.org/10.1016/j.ejor.2017.10.044" class="uri">https://doi.org/10.1016/j.ejor.2017.10.044</a></p></li>
+<li><p>From the Samuelson Volatility Effect to a Samuelson Correlation Effect: An analysis of Crude Oil Calendar Spread Options. <br/> <strong>Journal of Banking and Finance</strong>, 2018, Vol. 95, pp. 185-202. <a href="http://dx.doi.org/10.1016/j.jbankfin.2016.12.001" class="uri">http://dx.doi.org/10.1016/j.jbankfin.2016.12.001</a> (with L. SCHNEIDER)</p></li>
+<li><p>An investigation of model risk in a market with jumps and stochastic volatility. <br/> <strong>European Journal of Operational Research</strong>, 2016, Vol. 253, Issue 3, pp. 648-658. <a href="http://dx.doi.org/10.1016/j.ejor.2016.03.018" class="uri">http://dx.doi.org/10.1016/j.ejor.2016.03.018</a> (with G. COQUERET)</p></li>
+<li><p>Detection of arbitrage in a market with multi-asset derivatives and known risk-neutral marginals. <br/> <strong>Journal of Banking and Finance</strong>, 2015, Vol. 53, pp. 158-178. <a href="http://dx.doi.org/10.1016/j.jbankfin.2014.12.023" class="uri">http://dx.doi.org/10.1016/j.jbankfin.2014.12.023</a></p></li>
+<li><p>Application of Bernstein copulas to the pricing of multi-asset derivatives. <br/> In: <strong>Copulae in Mathematical and Quantitative Finance</strong>. Springer-Verlag, Series Lecture Notes in Statistics Vol. 213, 2013, pp. 277-288. <a href="http://dx.doi.org/10.1007/978-3-642-35407-6_13" class="uri">http://dx.doi.org/10.1007/978-3-642-35407-6_13</a></p></li>
+<li><p>Implied distribution as a function of the volatility smile. <br/> <strong>Bankers, Markets and Investors</strong>, No. 119 (July/August 2012), pp. 31-42</p></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
